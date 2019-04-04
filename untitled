@@ -2,6 +2,3 @@
 #cite who you are working with
 
 for i in range(10):
-    print(i)
-
-print ('That went well yeah')
