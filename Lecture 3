@@ -1,0 +1,167 @@
+#case sensitiviy is an issue in python always
+a = 5
+#integer
+b = 5.1
+#float- numbers with decimal points
+#decimals: for example number pi, where do you make the cut off?
+#it can depend on the hardware of computer, how floating points
+#are handled
+#For example: 5.5 or 5.51
+#imprecise equalities
+#when dealing with not a number (NaN)
+c = "hello world "
+#strings, any combination of characters
+#strings behave like CONTAINERS
+#
+
+d,e =  True, False
+#booleans
+f= none
+#special object, when nothing is assigned to a value, not a common
+#outcome
+
+#in this section you are assigning variables
+
+a = 2
+b = 2
+
+#for example a = 500 and b = 500
+
+a is b
+#if you change the values to 500
+#and you use is, a = b will result in
+#false.
+
+#is if checking same spot on memory
+# == checks if they are the same values
+#YOU WANT == not is
+
+4/0
+#will throw an error message, need to fill in some value that is
+#not a number, this when NaN comes in, package comes from numpi
+
+from numpy import NaN
+
+#why is nan changing into combination
+#it breaks at nan
+#cannot simply replace missing data with 0 or nan with 0
+
+x =  print ('hi')
+#print does not return any values
+
+#python will easily work with integer and floats. Will work
+#together.
+
+#syntac sugar
+#a = a + 5 is the same as a+=5
+
+c = "how are ya' doing"
+c.upper()
+#when a function is the property of an object, it is called a
+#method.  Printing in upper case, not modifying the value of c. not
+#being reassigned.
+
+c.split()
+#c.split(): you can specify what you want to split on, c.split ()
+ #is looking for white space
+ c.split (',')
+ #splitting on the comma
+
+ #CONTAINERS and INDEXING
+ #in python all objects are containers?
+ #pythong lists are square brackets
+ a = ['a' , 'b', 'b', 'c']
+ #can put anything on the list, lists are ordered
+ a[0]
+ #will return the first object of the list.
+ a[:]
+ #recreates a new copy in memory of that list
+ a[1:3]
+ #this is called slicing, closed on the left and open on the
+ #right [)
+ #unless it is the end of the value
+ b = {}
+ #b is a dictionary, kinda like a list
+
+ c = ('a','b')
+#tupple: will not encounter very often
+# tupples cannot be changed unliked lists (inmutable)
+#tupples are closed in parantheses
+
+d = set(['a','b'])
+print (d)
+#sets: they have to have UNIQUE values in them, set
+#can make lists have unique values. Turn list into set.
+#will eliminate non-unique values
+#get rid of duplicats, turn in into a set, then a list.
+#python executs codes from inside out and then left to right.
+#Because they are unique you can do a difference, intersection
+#and union.
+
+z = set (a)
+list(z)
+
+x.difference(z, y)
+
+
+#lists is a zero index list, everything starts at 0
+#if we have a list of items, say numbers
+#[1,2,3,4]
+#0,1,2,3
+#most programming languages are zero index
+#intermediate variable: important term
+#when you turn a list into  a set, they should have the same
+#order.
+#python will take single or double quote, just be consistent
+
+x = [1, 2, 3, 4, 5, 5]
+x = set(x)
+y = set([1,2])
+z = set([5,6,7])
+
+#DICTIONARIES
+t = ['a', 'b', 'c']
+#in the dictionary you have to name them, DICTIONARIES
+#do have an order. Ordered by the time the key is created
+#in the dictionary. You can assign a new key and it Will
+#go to the end of the order.
+#key:value
+
+x = [1, 2, 3, 4, 5, 6, 7]
+a = x[:4]
+b = x[4:]
+
+x =[3:5] = [99,99]
+#will overwrite values in the list assigned x
+
+a = ['a','b','c','d','e']
+a[::-2]
+#indexing refers to finding the locations and slicing refers
+#to picking certain items
+
+x = ['me':4,
+    'you':10,
+    'them':None]
+#this is a dictionary, spacing does not bother python
+#place where the indentation matters is at the beginning
+#python looks for indenting when trying to find a loop
+#or a function. It looks for white space.
+
+x = {'me':4,
+    'you':10,
+    'them':None}
+
+x['me']
+
+a, *b = [1,2,3,4]
+#packing and unpacking list, works with the starts
+#star is the catch all, a will take value 1, and
+#b will take the remaining values.
+
+x = 'hello world how are you'
+#this string can be sliced
+x[5:10]
+#slicing
+
+#summary: variables (integers, floats, string, booleans)
+#containers: lists, tupples, dictinaries
