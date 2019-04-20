@@ -1,0 +1,118 @@
+#Functions: reusability and readability
+#classes: another level of organization
+#methods: functions that are part of a class
+
+x = 'hello world'
+
+x.split()
+#method has access to the class under it
+
+split(x)
+#function that is not a property of class, so we need to pass in the informatio
+#we want to work with
+#class: logical grouping for variables and functions. The base building block
+# of many common elements of Python.
+#method: a function that is part of a class
+#class object: the python object that holds the information that makes up the
+#class, like a blueprint.
+#instance object: if you think of a class as a blueprint, the instance of a class ClassName(object):
+#is what is built by that blueprint. Similar to how print is a function, but print()
+#is calling the function.
+#inheritance: when a new class is created using the contents of a base class
+#to start, and then building on it.
+
+class Shape():
+    description = 'Shape creator v1.0'
+
+#CamelCase is reserved for class
+#do not capitalize variable names like Camel Case in python
+#parentheses are optional
+#what you put in the parentheses are inheritance things
+#3 functions underneath a class, they are methods
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.name = "I've been through the desert on a shape with no name..."
+
+
+#Two undersccores and two positional arguments
+#methods act like functions. The one way methods behave differently, the first
+#positional argument is always a pointer to the class they are part of.
+
+
+    def area(self):
+        return self.x * self.y
+
+    def perimeter(self):
+        return(2 * self.x) + (2 * self.y)
+
+rectangle = Shape(10,4)
+#rectangle is an instance of the shape class
+#we need to values because it is using the first def (self, x, y)
+#two underscores indicate that pythons is reserving a name
+#an in it method that's what it is run when you create an instance
+#self is a pointer to the class and assigns it to the
+
+rectangle.name = 'Rectangle'
+#does not change the blueprint. we have reassigned the name
+
+rectangle.area()
+rectangle.perimeter()
+
+#rectangle is an instance of your shape class
+#self does not matter, it is the position that matters
+#first one has the class passed onto it automatically
+#shape is the blueprint
+#Shape does not exist if you don't run it
+
+#class and instance of the class
+x = [Shape(i, i+1) for in range(10)]
+#list comprehension to create ten instances of shape
+#list of 10 shape instances
+x[0].area()
+#create as many blueprints and start different initialization arguments
+
+Shape.x
+#will throw an error
+#x not an instance, the class will only recognize instances
+Shape.description
+#will not throw an error because it is part of the description
+
+#Inheritance
+class_Square(Shape):
+    def__init__(self,x):
+    self.x = x
+    self.y = y
+    self.name = 'Square man'
+
+#square uses the blueprint of shape
+#when you inherit a class, and include a new init, it overwrite the original
+#init
+
+square = Square(10)
+square.area()
+#you need both x and y because we are inheriting functions that need x and y
+#if you don't want to inherit it, create a new function
+#what if there is a method that should not apply that you inherited?
+#split them off into a whole new class
+
+#what if you don't want the new perimeter method?
+
+class NewClassOne(Shape):
+    def__init__self:
+        print("It's new!")
+    #it should have are but not perimeter
+
+class NewClassTwo(Shape):
+    def perimeter(self):
+        return (2 * self)
+
+#Classes, methods, instances
+@my_decorator
+@staticmethod
+#itself a function that writes a little bit of code before or after you run
+#the function
+#decorator is like a wrapper, running first and last
+#method and a class. Positional argument for class.
+#Init is a method.

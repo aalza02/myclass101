@@ -1,0 +1,190 @@
+#Lecture 4 - loops and functions :)
+#libraries(Numpy)
+#str format: booleans, for, if list comp, dict comp
+
+#libraries in python are also called modules
+
+#global namespace - if you type a python prompt, python knows where to find it
+#ie: print, len
+#how to get libraries
+a) import Numpy
+#in numpy the functions exist
+numpy.mean([1,2,3])
+#access with the dot location
+
+b) import numpy as np
+#now there is something in the globalspace called np
+#np is a convention for numpy
+#numpy is a pretty big library then you use a from operator
+
+c) from numpy import mean
+
+# from numpy import *
+# not a good practice
+# only mentioning mean, not good, because you don't have a source
+# what if you are importing multiple libraries with common namespace
+# problem with overwriting
+#import as pd (importing pandas )
+
+# string formatting
+
+my_string = "hello how are you today {}"
+#curly braces are accessing string formatting
+#method, function of some object
+
+my_string.format('Jeff')
+#comma separators for a huge number?
+# you can also use looping
+
+#there is also an exclusive or
+#python normally only uses or
+
+#Booleans is in notebook
+#Python booleans have a number assigned to them
+#True = 1
+#False = 0
+#large list of booleans, you can sum the list to find how many are true
+
+True + True
+
+sum([True, True, False, False, True ])
+
+#for loops
+for x in something
+#anything with properties of a list can be treated like a list
+#tupple is a list, but are inmutable
+#set is unique, sets are unordered objects, not guaranteed that is unordered
+#you can iterate over lists and set, do a for item
+
+my_list = [1,2,3,4,7,10,1000]
+for i in range(len(my_list)):
+    print(i)
+#len returns the length of a list
+#range(start, stop, step)
+#index locations instead of values
+
+for i in range(len(7):
+    print(i)
+
+in_range = len(my_list)
+for i in range(len(in_range)):
+        print(i)
+
+#output is the index position
+#what if you want the values of the list?
+
+for val in my_list:
+    print(val)
+
+#this will iterate over values
+#i is an arbitrary assignment
+#be descriptive when assigning variables
+
+list(range(10))
+#range is a generator function, does not build a list in memory
+#generator function: start here, end here, give you the current value you are on
+
+#what if you want value and index location?
+#use enumerate
+
+for vals in enumerate(my_list):
+    print (vals)
+    #the code above will produce a tupple
+    #print(i,"", v)
+    #the code above lets you unpack the list
+    print (i + v)
+    #adding index location and the value of object
+
+    #reminder on unpacking
+    #unpacking
+    a,b = [1,2]
+
+#print can take multiple arguments
+#the order that comes out of enumerate is index and value
+
+#Dictionaries
+#{key: val,
+        }
+#instead of automatically starting at 0, you need to name the location
+
+my_dict = {"first":1, "second":14, "third" : 55, "fourth": 55}
+print(my_dict)
+#output does not have an order, dictionaries don't have an order
+
+my_dict.keys()
+
+my_dict.values()
+
+my_dict.items()
+#this is similar to enumerate, therefore it is unpackable
+
+for key, val in my_dict.items():
+    print(key,"",val)
+
+#same as enumerating on a list
+
+#summary: we looped over indices, content
+#at the core it is the exact same function
+#list like object that comes out of dictionaries
+#for loop will iterate over list and dictionary
+#you can also wrap it on a list
+
+#looping over data, bad practice
+#vectorization
+
+#List comprehensions
+#nice way of doing a for loop in one line
+
+#What if you want to double value for the list?
+#List comprehensions
+#for loop can be anything. In comparison, only lists come out of lists
+#comprehension.
+#format
+#[f(x) for x in thing]
+#function can be anything
+#x is arbitrary
+#the part where x is, is only part of the list comprehension
+#won't be saved on the code.
+
+[v*2 for v in my_list]
+
+#Dictionary comprehension
+#format below:
+#{f(k):f(v) for x in thing}
+
+{k+"_new":v*2 for k, v in my dict.items()}
+#k is for key and adding
+#keys need to be unique in the dictionary
+
+#iF CONDITIONALS
+#after if, it will look for condition that it is either true or false
+x = 4
+
+#for x in my_list:
+#this will publish an indentation error
+for x in my_list:
+    if x < 7 or x ==0:
+        print('yes')
+    elif x == 7:
+        print('maybe!')
+    else:
+        print('no')
+
+#there can only be one if and elif, as many "elses" as  you want
+#depending on the value of x, different output
+#order of "elses" matter
+
+[vv*2 for vv in my_list if vv <= 10]
+#added a conditional in the end
+#nothing catches when condition does not apply
+#able to iterate over two lists at once
+
+[vv*2 for i, vv in enumerate(my_list) if i < 3]
+
+[vv*2 for vv in my_list[:3]]
+#accomplishing the same thing as line 182
+#if statements can also be used on dictionary comprehensions
+
+#summary: libraries(numpy), str format, booleans, for, if, list comparison, dict comp
+
+my_string = hello {0}, how are you this {0}? Sorry, i meant {1}!,. format("Bob","Tuesday")

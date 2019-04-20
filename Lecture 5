@@ -1,0 +1,169 @@
+#Lecture 5 04.16.2019
+#Functions
+#A focused grouping that is easily reusable
+#Functions are also useful when organizing code
+#Functional programming: Best practice of how to write code.
+#All of functions are deterministic. All inputs into the function should
+#give you the same output.
+#global variable: a variable that is defined at the top level of the program
+#and is accessible everywhere.
+#local variable: a variable that is defined inside a function, and is only available
+#from that level and up
+
+#Arguments(args)
+#Key Word arguments(kwargs)
+
+#What is a global variable?
+#Local variables defined inside the function
+
+#Order of operations
+#Local
+#local + is  a nested local
+#global
+#error!, function does not exist.
+
+x = 10
+
+def my_func(a):
+    result = (a + x) * 2.1
+    return result
+
+#return statement and print statement
+#function name should be descriptive
+#function is not functional programming  you are missing value for a
+#and the value of x could change.
+
+#when you call the function it actually runs the code
+
+print(my_func(10))
+#you only get the result if you call the function
+
+x = 10
+
+def my_func(a, b):
+    result = (a + b) * 2.1
+    return result
+
+#functions needs two arguments
+result = my_func(10,x)
+#a is Local
+#b is Local
+#x is global
+#result is local
+#name variables different names even if they are local and global
+#readibility is key
+
+result * 3
+#you can do numerical operations
+
+def my_func(val=3, other_val =5):
+    return(val + other_val) * 2
+
+my_func()
+#using default arguments
+#what about specified arguments?
+
+my_func(val = 17)
+#overwrite the first value and using the value of the other variables
+#mapping to the name, not the position
+
+#arguments and key word arguments that you want to pass through a function
+def my_func(val=3, other_val =5):
+    return(val + other_val) * 2
+
+values = {'val': 17, 'other_val':17}
+my_func(**values)
+#unpacking the dictionary and inputting into the functions
+#if no double star, it will give an error because of overwriting issue
+#trying to do math with a dictionary, dictionary does not do math.
+#** are for dictionaries to get the keyword and value
+
+values = [17, 17]
+my_func(*values)
+#* is for lists, it is telling to first unpack and then using a= 17 and b= 17
+#positional arguments are not optional
+#only applicable if the data is on list or dictionary
+
+#Mixing arguments and key word Arguments
+#arguments go first because order matters
+
+def my_func(a , b =9):
+    return(a + b) *2.1
+
+my_func(5, b = 45)
+round(my_func(5), 2)
+#rounding to two decimal places
+#high precision floating points can be problematic
+#positional argument comes first, key word argument goes last
+#can also be written without b. my_func(5, 45)
+#use a key word argument if argument is key word
+#call function to execute function
+
+my_string = "hello you"
+my_string.split(sep= " ")
+#it is actually a key word argument, python is reading over
+#as a positional argument
+
+#generator is a function that has a yield statement inside of a loop
+#encountered this in range statement for loops
+
+def my_gen():
+    start = -1
+    while True:
+        start += 1
+        yield start
+#this is an infinite loop
+#+=
+#a = a +1
+#a += 1
+#generator:
+gen = my_gen()
+#crate an instance of it
+next(gen)
+#iterative for the next value only
+
+def my_gen():
+    start = 0
+    while True:
+        start == start **2
+        yield start
+
+gen = my_gen()
+next(gen)
+#not holding the entire list in memory, generate function
+#yield is the same as a return statement except that it tells function
+#that it needs to wait for the next loop
+#won't work if you don't nest yield inside the loop
+#if you move start to after while, the output is 4
+#generators do not need to be math, knows how to pause a loop and ask
+#for the next value
+
+for v in my_gen(10):
+    print(v)
+#same as gen, but the for loop knows how to stop without showing an error
+#message
+
+#Lambda Functions
+#not python specific, programming specific used in many languages
+#simple one line function that is anonymous
+#write a function without assigning it to a name
+
+my_func = lambda x: x*2
+my_func (5)
+
+#lambda x: x*2
+#can be passed as an argument
+
+def my_func():
+    return x*2
+
+lambda val: val [0]
+#lambdas have to be one line
+
+#goal create a basic function
+#repeateability and readability
+#functional programming: need the return statement and then do something
+#with what you return from the value
+
+#when do we want to start writing new functions?
+#readability first

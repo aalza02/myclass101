@@ -41,13 +41,11 @@ a is b
 #not a number, this when NaN comes in, package comes from numpi
 
 from numpy import NaN
-
-#why is nan changing into combination
 #it breaks at nan
 #cannot simply replace missing data with 0 or nan with 0
 
 x =  print ('hi')
-#print does not return any values
+#print does not return any values because hi is not assigned to x
 
 #python will easily work with integer and floats. Will work
 #together.
@@ -69,7 +67,7 @@ c.split()
 
  #CONTAINERS and INDEXING
  #in python all objects are containers?
- #pythong lists are square brackets
+ #python lists are square brackets
  a = ['a' , 'b', 'b', 'c']
  #can put anything on the list, lists are ordered
  a[0]
@@ -93,7 +91,7 @@ print (d)
 #sets: they have to have UNIQUE values in them, set
 #can make lists have unique values. Turn list into set.
 #will eliminate non-unique values
-#get rid of duplicats, turn in into a set, then a list.
+#get rid of duplicates, turn in into a set, then a list.
 #python executs codes from inside out and then left to right.
 #Because they are unique you can do a difference, intersection
 #and union.
@@ -161,7 +159,7 @@ a, *b = [1,2,3,4]
 x = 'hello world how are you'
 #this string can be sliced
 x[5:10]
-#slicing
+#slicing of a string.
 
 #summary: variables (integers, floats, string, booleans)
-#containers: lists, tupples, dictinaries
+#containers: lists, tuples, dictinaries
